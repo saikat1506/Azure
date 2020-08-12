@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+  <title>Calculate the readmission possibility</title>
+ <style>
+#bgimg{
+  border: 1px solid black;
+  padding: 25px;
+  background: url('https://earlysign.com/wp-content/uploads/2019/07/diabetes-lo.jpg');
+//background-repeat: round;
+}
+div.x1{
+  margin-left: 10%;
+}
+</style>
+  </head>
+
+  <body style="background-color:powderblue;" >
+  <nav class="navtop">
+  <div id="bgimg">
+ </nav>
+</div>
+  <BR> <BR> 
+    <h1><div style="text-align:center"><font color="blue">HOSPITAL_READMISSION</font></div></h1>
+    <hr>
+    </br>
+    <h1><div style="text-align:center">Enter the values to Calculate the readmission possibility</div></h1>
+    </br>
+	
+    <div class='x1'>
+      <div class='row'>
+        <div class='col-6'>
+          <form method="POST" action="/predict"  style:margin-left:10%>
+            <div class="form-group">
+              <label for="Time_in_hospital(In Days)"><p class="font-weight-bold">Time_in_hospital(In Days)</p></label>
+              <input type="number" name="time_in_hospital" required="required">
+              <small id="1" class="form-text text-muted">Enter the no of Days in hospital</small>
+              </div>
+
+              <div class="form-group">
+                <label for="Num_lab_procedures"><p class="font-weight-bold">Num_lab_procedures</p></label>
+                <input type="number" name="num_lab_procedures" required="required">
+                <small id="2" class="form-text text-muted">Enter the number of Lab Procedures, else enter 0</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="Age"><p class="font-weight-bold">Age</p></label>
+                  <input type="number" name="age" required="required">
+                  <small id="3" class="form-text text-muted">Enter the Age in numbers</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="Num_medications"><p class="font-weight-bold">Num_medications</p></label>
+                    <input type="number" name="num_medications" required="required">
+                    <small id="4" class="form-text text-muted">Enter the number of Medications</small>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Num_procedures"><p class="font-weight-bold">Num_procedures</p></label>
+                      <input type="number" name="num_procedures" required="required">
+                      <small id="5" class="form-text text-muted">Enter the Number of Procedures</small>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="Number_diagnoses"><p class="font-weight-bold">Number_diagnoses</p></label>
+                        <input type="number" name="number_diagnoses" required="required">
+                        <small id="6" class="form-text text-muted">Enter the Number of Diagnoses</small>
+                        </div>
+
+                        <input class='btn btn-primary' type='submit' value='Submit'>
+            </form>
+
+          </div>
+          </div>
+          </div>
+  </body>
+
+</html>
